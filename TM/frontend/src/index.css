@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --bg-dark:        #0a0a0a;
+  --bg-darker:      #0d0d0d;
+  --accent-start:   #667eea;
+  --accent-end:     #764ba2;
+  --text-light:     #e0e0e0;
+  --text-muted:     #aaa;
+  --card-bg:        #121212;
+  --card-border:    #222;
+  --neon-shadow:    0 0 10px rgba(102,126,234,0.7);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-darker);
+  color: var(--text-light);
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* page wrapper used by every “page” component */
+.PageContainer {
+  flex: 1;
+  padding: 40px;
+  background: radial-gradient(circle at top left,
+                              #131320 0%, var(--bg-dark) 85%);
+  overflow-y: auto;
+  animation: bgShift 20s infinite alternate;
+}
+
+@keyframes bgShift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+/* generic card for forms, summaries, etc. */
+.Card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(102,126,234,0.2);
+  border: 1px solid var(--card-border);
+  position: relative;
+}
+
+.Button {
+  background: linear-gradient(135deg,var(--accent-start) 0%,var(--accent-end) 100%);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: var(--neon-shadow);
+}
+
+input,
+select,
+textarea {
+  background: #1a1a1a;
+  color: var(--text-light);
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-start);
+  border-radius: 4px;
 }

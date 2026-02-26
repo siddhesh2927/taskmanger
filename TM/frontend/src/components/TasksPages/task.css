@@ -56,6 +56,44 @@
     font-size: 15px;
 }
 
+.TaskPageContainer {
+  padding: 40px;
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+/* reuse the .TaskCard rules from home.css (they already match theme) */
+
+/* filepath: c:\Users\siddhesh\Documents\Devops\TM\frontend\src\components\AddTask\AddTask.css */
+.AddTaskContainer {
+  padding: 40px;
+  background: var(--bg-dark);
+}
+.AddTaskForm {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(102,126,234,0.2);
+}
+.AddTaskForm input,
+.AddTaskForm textarea,
+.AddTaskForm select {
+  background: #1a1a1a;
+  color: var(--text-light);
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+.AddTaskForm button {
+  background: linear-gradient(135deg,var(--accent-start) 0%,var(--accent-end) 100%);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: var(--neon-shadow);
+}
+
 @media only Screen and (min-width:0px) and (max-width:800px){
     .PagesMainDiv{
         grid-template-columns: repeat(1,1fr);

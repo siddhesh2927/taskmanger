@@ -28,3 +28,20 @@ a{
     font-family:Book Antiqua
    
 }
+
+.SidebarContainer {
+  width: 240px;
+  background: linear-gradient(180deg,#111 0%,#0d0d0d 100%);
+  color: var(--text-light);
+}
+.SidebarLink {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  transition: background .2s;
+}
+.SidebarLink:hover,
+.SidebarLink.active {
+  background: rgba(102,126,234,0.2);
+}

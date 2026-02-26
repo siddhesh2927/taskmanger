@@ -7,7 +7,7 @@
 .HomeContainer {
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0d0d0d 0%, #111111 100%);
   gap: 0;
   padding: 0;
 }
@@ -15,9 +15,19 @@
 .HomeMainContent {
   flex: 1;
   padding: 40px;
-  background: #f8f9fa;
+  /* dark, slightly animated background */
+  background: #0a0a0a;
+  background: radial-gradient(circle at top left, #131320 0%, #0a0a0a 85%);
   overflow-y: auto;
   margin: 0;
+  color: #e0e0e0;
+  /* subtle moving noise/glow */
+  animation: bgShift 20s infinite alternate;
+}
+
+@keyframes bgShift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
 }
 
 .HomeHeader {
@@ -28,8 +38,27 @@
 .WelcomeText {
   font-size: 32px;
   font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 10px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.WelcomeText::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg,
+      rgba(102,126,234,0.6),
+      rgba(118,75,162,0.6),
+      rgba(102,126,234,0.6));
+  mix-blend-mode: overlay;
+  animation: neonGlow 2s ease-in-out infinite;
+}
+
+@keyframes neonGlow {
+  0%,100% { opacity: 0.3; }
+  50%     { opacity: 1; }
 }
 
 .WelcomeText span {
@@ -41,7 +70,7 @@
 
 .SubtitleText {
   font-size: 16px;
-  color: #666666;
+  color: #aaa;
 }
 
 .TasksSummarySection {
@@ -52,25 +81,53 @@
 }
 
 .TaskCard {
-  background: #ffffff;
+  background: #121212;
   border-radius: 12px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.2),
+              0 0 30px rgba(118, 75, 162, 0.15);
   transition: all 0.3s ease;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #222;
+  position: relative;
+}
+
+.TaskCard::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px;
+  right: -2px; bottom: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg,
+      rgba(102,126,234,0.5),
+      rgba(118,75,162,0.5));
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
 }
 
 .TaskCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.7),
+              0 0 50px rgba(118, 75, 162, 0.6);
   border-color: #667eea;
+}
+
+.TaskCard:hover::before {
+  opacity: 1;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .TaskCardHeader {
   font-size: 14px;
   font-weight: 600;
-  color: #666666;
+  color: #bbb;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -90,6 +147,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 10px rgba(102,126,234,0.7);
 }
 
 .IllustrationSection {
