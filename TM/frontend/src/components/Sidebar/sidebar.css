@@ -1,9 +1,25 @@
+.SidebarMainDiv {
+  box-sizing: border-box;
+}
 
+.ArrorDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.IconsMainDiv {
+  width: 100%;
+}
+
+a{
+   
+    text-decoration: none;
+}
 
 .IconsMainDiv{
      display: flex;
 }
-
 
 .ArrorDiv{
     background-color: rgb(25,118,210);
@@ -11,8 +27,4 @@
     justify-content:space-between;
     font-family:Book Antiqua
    
-}
-a{
-   
-    text-decoration: none;
 }

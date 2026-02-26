@@ -1,51 +1,153 @@
-.AllPageMainDiv{
-    display: flex;
-    font-family: Book Antiqua;
-    justify-content: space-between;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.HomeContainer {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  gap: 0;
+  padding: 0;
+}
 
-.HomeOuterDiv{
-    display: flex;
-    justify-content: center;
-     margin-top: 80px;
-    text-align: center;
-    flex-wrap: wrap;
-    
+.HomeMainContent {
+  flex: 1;
+  padding: 40px;
+  background: #f8f9fa;
+  overflow-y: auto;
+  margin: 0;
 }
-.HomeInDiv{
-    width: 250px;
-    margin: 10px;
-    background-color:rgb(25,118,210);
- 
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
+
+.HomeHeader {
+  margin-bottom: 50px;
+  text-align: center;
 }
-.Image{
-    width: 75%;
-    height: 350px;
-    margin-top: 50px;
+
+.WelcomeText {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
 }
-.NameHead{
-    font-weight: bold;
+
+.WelcomeText span {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.SubtitleText {
+  font-size: 16px;
+  color: #666666;
+}
+
+.TasksSummarySection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.TaskCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.TaskCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+}
+
+.TaskCardHeader {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666666;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.TaskCardValue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+}
+
+.TaskNumber {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.IllustrationSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.IllustrationImage {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .HomeContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .HomeMainContent {
+    padding: 20px;
+  }
+
+  .WelcomeText {
+    font-size: 24px;
+  }
+
+  .TasksSummarySection {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .TaskCard {
+    padding: 20px 15px;
+  }
+
+  .TaskNumber {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .HomeMainContent {
+    padding: 15px;
+  }
+
+  .WelcomeText {
     font-size: 20px;
-}
-@media only Screen and (min-width:0px) and (max-width:720px){
-    .HomeOuterDiv{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 40px;
-        text-align: center;
-        flex-wrap: wrap;
-    }
-    .HomeInDiv{
-        width: 220px;
-    }
-    .Image{
-        width: 80%;
-        height: 200px;
-        margin-top: 50px;
-    }
+  }
+
+  .TasksSummarySection {
+    grid-template-columns: 1fr;
+  }
+
+  .IllustrationImage {
+    max-width: 100%;
+  }
 }
