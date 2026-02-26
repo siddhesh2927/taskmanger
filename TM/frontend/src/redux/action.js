@@ -1,6 +1,10 @@
 
 // import { Navigate } from "react-router-dom"
 import Cookies from 'js-cookie'
+
+// API Base URL from environment variable
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:1200'
+
 export const ADD_USER="ADD_USER"
 export const ADD_TASK="ADD_TASK"
 export const RTASK="RTASK"
@@ -39,7 +43,7 @@ export const Auth=(data)=>{
 export const login=(data,setCookie)=>{
        return async(dispatch,getState,api)=>{
            try {
-               const res=await fetch("https://mytask-managerapp.herokuapp.com/login",{
+               const res=await fetch(`${API_URL}/login`,{
                    method:"POST",
                    body:JSON.stringify(data),
                    headers: {
@@ -79,7 +83,7 @@ export const register=(data,setCookie)=>{
     
             return async(dispatch, getState, api) => {
                try {
-                const res=await fetch("https://mytask-managerapp.herokuapp.com/register",{
+                const res=await fetch(`${API_URL}/register`,{
                     method:"POST",
                     body:JSON.stringify(data),
                     headers: {
@@ -124,7 +128,7 @@ export const register=(data,setCookie)=>{
     export const authenticate=(token)=>{
         return async(dispatch, getState, api) => {
             try {
-                 const res=await fetch("https://mytask-managerapp.herokuapp.com/task/gettask/auth",{
+                 const res=await fetch(`${API_URL}/task/gettask/auth`,{
                  method:"GET",
                  headers: {
                      'Content-Type': 'application/json',
@@ -145,7 +149,7 @@ export const register=(data,setCookie)=>{
  export const AddTasktoBackend=(token,body)=>{
     return async(dispatch, getState, api) => {
         try {
-             const res=await fetch("https://mytask-managerapp.herokuapp.com/task/addtask",{
+             const res=await fetch(`${API_URL}/task/addtask`,{
             
              method:"POST",
              body:JSON.stringify(body),
@@ -168,7 +172,7 @@ export const register=(data,setCookie)=>{
  export const TaskPageData=(token,id,filter)=>{
     return async(dispatch, getState, api) => {
         try {
-             const res=await fetch(`https://mytask-managerapp.herokuapp.com/task/${id}?filter=${filter}`,{
+             const res=await fetch(`${API_URL}/task/${id}?filter=${filter}`,{
                 headers: {
                    
                     'Authorization': `Bearer ${token}`
@@ -187,7 +191,7 @@ export const register=(data,setCookie)=>{
  export const UpdateTask=(taskid,filter,token,id,data)=>{
     return async(dispatch, getState, api) => {
         try {
-             await fetch(`https://mytask-managerapp.herokuapp.com/task/${taskid}`,{
+             await fetch(`${API_URL}/task/${taskid}`,{
                 method:"PATCH",
                 body:JSON.stringify(data),
                 headers: {
@@ -207,7 +211,7 @@ export const register=(data,setCookie)=>{
  export const updateSubtask=(taskid,subid,filter,token,id,data)=>{
     return async(dispatch, getState, api) => {
         try {
-             await fetch(`https://mytask-managerapp.herokuapp.com/task/${taskid}/${subid}`,{
+             await fetch(`${API_URL}/task/${taskid}/${subid}`,{
                 method:"PATCH",
                 body:JSON.stringify(data),
                 headers: {
@@ -228,7 +232,7 @@ export const register=(data,setCookie)=>{
  export const DeleteTask=(taskid,filter,token,id)=>{
     return async(dispatch, getState, api) => {
         try {
-             await fetch(`https://mytask-managerapp.herokuapp.com/task/${taskid}`,{
+             await fetch(`${API_URL}/task/${taskid}`,{
                 method:"DELETE",
              
                

@@ -4,7 +4,17 @@ const { register, login } = require("./controllers/auth.controllers");
 const { body, validationResult } = require("express-validator");
 const authenticate=require("./middlewares/authenticate")
 var cors = require('cors')
-app.use(cors())
+
+// CORS configuration
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://tushar-task-manager.vercel.app'],
+  credentials: true,
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}
+
+app.use(cors(corsOptions))
 app.use(express.json())
 
 
