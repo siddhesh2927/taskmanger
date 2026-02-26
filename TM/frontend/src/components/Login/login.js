@@ -4,7 +4,6 @@ import { login } from "../../redux/action"
 import { useDispatch} from "react-redux"
 import Cookies from 'js-cookie'
 import { useNavigate } from "react-router-dom"
-import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
 
 import "./login.css"
@@ -34,13 +33,10 @@ export const Login=()=>{
     return (
        
         <form className="Form">
-            <Button sx={{fontSize:25,fontWeight:'bold'}} variant="text">Sign in</Button><br></br>
-            <TextField onChange={(e)=>update(e.target)} margin="dense"  name="email" type="email"  label="Email" variant="outlined" />
-             <br></br>
-             <br></br>
-            <TextField onChange={(e)=>update(e.target)} name="password" type="password" margin="dense" label="password" variant="outlined"/><br></br>
-             <br></br>
-            <Button variant="contained" onClick={async(e)=>{
+            <h1>Sign in</h1>
+            <input onChange={(e)=>update(e.target)} name="email" type="email" placeholder="Email" />
+            <input onChange={(e)=>update(e.target)} name="password" type="password" placeholder="Password" />
+            <Button variant="contained" fullWidth onClick={async(e)=>{
                 e.preventDefault()
                if(data.email==="" || data.password===""){
                    return alert("all fields required")
@@ -55,9 +51,9 @@ export const Login=()=>{
                     
                  })
                   }} >Submit</Button>
-            <br></br>
-            <br></br>
-            <Link to="/register">Don't have an account? Sign up</Link>
+            <p style={{marginTop: "20px"}}>
+                Don't have an account? <Link to="/register">Sign up</Link>
+            </p>
             
         </form>
        
