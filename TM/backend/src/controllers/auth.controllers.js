@@ -1,9 +1,10 @@
 const User=require("../models/user.model")
 const jwt = require('jsonwebtoken')
 const {validationResult} = require("express-validator")
+require('dotenv').config()
 
 const generateToken=(user)=>{
-    return  jwt.sign({ user },"tushar")
+    return  jwt.sign({ user }, process.env.JWT_SECRET || "tushar")
 }
 
 
