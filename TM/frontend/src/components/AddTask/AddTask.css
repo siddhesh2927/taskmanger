@@ -1,3 +1,375 @@
+/* Add Task Component Styles */
+.add-task-page {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.add-task-content {
+    flex: 1;
+    padding: 40px;
+    margin-left: 60px; /* Space for sidebar */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.add-task-container {
+    width: 100%;
+    max-width: 800px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+/* Header Styles */
+.form-header {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+}
+
+.form-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.header-icon {
+    font-size: 48px !important;
+    margin-bottom: 16px;
+    color: white !important;
+}
+
+.header-title {
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+    color: white !important;
+}
+
+.header-subtitle {
+    opacity: 0.9;
+    color: white !important;
+}
+
+/* Form Styles */
+.task-form {
+    padding: 30px;
+}
+
+.form-section {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.form-section:hover {
+    border-color: #6366f1;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+}
+
+.section-title {
+    font-weight: 600 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 20px !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    border-radius: 2px;
+}
+
+/* Input Styles */
+.form-input {
+    background: white !important;
+}
+
+.form-input .MuiOutlinedInput-root {
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+.form-input .MuiOutlinedInput-root:hover {
+    border-color: #6366f1 !important;
+}
+
+.form-input .MuiOutlinedInput-root.Mui-focused {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+
+.form-select .MuiOutlinedInput-root {
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+.form-select .MuiOutlinedInput-root:hover {
+    border-color: #6366f1 !important;
+}
+
+.form-select .MuiOutlinedInput-root.Mui-focused {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+
+/* Subtask Styles */
+.subtask-input-container {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.subtask-input {
+    flex: 1;
+}
+
+.add-subtask-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    margin-top: 8px !important;
+    transition: all 0.3s ease;
+}
+
+.add-subtask-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+.add-subtask-btn:disabled {
+    background: #e5e7eb !important;
+    color: #9ca3af !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.subtasks-list {
+    margin-top: 16px;
+}
+
+.subtasks-label {
+    font-weight: 500 !important;
+    color: #6b7280 !important;
+    margin-bottom: 12px !important;
+    display: block;
+}
+
+.subtask-chip {
+    margin: 4px 8px 4px 0 !important;
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+    color: #6366f1 !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease;
+}
+
+.subtask-chip:hover {
+    background: #f8fafc !important;
+    border-color: #6366f1 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+}
+
+.subtask-chip .MuiChip-deleteIcon {
+    color: #6366f1 !important;
+}
+
+.subtask-chip .MuiChip-deleteIcon:hover {
+    color: #4f46e5 !important;
+}
+
+/* Error Styles */
+.error-alert {
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Submit Button */
+.form-actions {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px 32px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3) !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%) !important;
+}
+
+.submit-btn:disabled {
+    background: #e5e7eb !important;
+    color: #9ca3af !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .add-task-content {
+        margin-left: 60px;
+        padding: 30px 20px;
+    }
+    
+    .add-task-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .add-task-content {
+        margin-left: 0;
+        padding: 20px 15px;
+    }
+    
+    .form-header {
+        padding: 30px 20px;
+    }
+    
+    .header-icon {
+        font-size: 40px !important;
+    }
+    
+    .header-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .task-form {
+        padding: 20px;
+    }
+    
+    .form-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .subtask-input-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .add-subtask-btn {
+        margin-top: 0 !important;
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .add-task-content {
+        padding: 15px 10px;
+    }
+    
+    .form-header {
+        padding: 25px 15px;
+    }
+    
+    .task-form {
+        padding: 15px;
+    }
+    
+    .form-section {
+        padding: 15px;
+    }
+    
+    .header-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.add-task-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.form-section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.form-section:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.form-section:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* Focus States */
+.form-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #6366f1 !important;
+    border-width: 2px !important;
+}
+
+.form-select .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #6366f1 !important;
+    border-width: 2px !important;
+}
+
+/* Loading State */
+.submit-btn.Mui-disabled {
+    background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 100%) !important;
+    color: white !important;
+}
+
+/* Success State (for future implementation) */
+.success-message {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
 .AddtaskDiv{
     width: 100%;
     display: flex;
@@ -6,43 +378,109 @@
     flex-wrap: wrap;
 }
 .AddTaskForm{
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    width:300px;
-    padding: 10px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
     margin: 20px;
-    text-align: center;
-    background-color: white;
-    border: 1px solid blue;
+    text-align: left;
+    border: 1px solid #e5e7eb;
 }
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.form-header button {
+    color: #6366f1 !important;
+    font-size: 1.5rem !important;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-section {
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.form-section h3 {
+    color: #1a1a1a;
+    margin: 0 0 20px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.subtask-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 .subTaskMainDiv{
-    width: 250px;
-    height: 250px;
-    margin: auto;
+    width: 100%;
+    max-height: 200px;
     overflow-y: auto;
-  
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #ffffff;
+    padding: 10px;
 }
 .subTaskDiv{
     display: flex;
     justify-content: space-between;
-    border: 1px solid red;
-    background-color: rgb(25,118,210);
+    align-items: center;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     color: white;
-    font-weight: bold;
-    font-family:Book Antiqua ;
-    margin-top: 5px;
-    border-radius: 5px;
-    width: 90%;
-    margin: auto;
-    margin-top: 5px;
-    padding: 5px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    width: 100%;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
 
+.subTaskDiv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.subTaskDiv p {
+    margin: 0;
+    flex: 1;
 }
 
 @media only Screen and (min-width:0px) and (max-width:720px){
     .AddtaskDiv{
-        padding:0px;
+        padding: 0px;
     }
-   
+    
+    .AddTaskForm {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .form-section {
+        padding: 15px;
+    }
+    
+    .subtask-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
 .add-task-container {

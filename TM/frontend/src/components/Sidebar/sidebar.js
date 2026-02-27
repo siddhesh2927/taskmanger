@@ -41,12 +41,13 @@ const Div = styled.div`
   left: 0;
   z-index: 25;
   padding: 12px 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: width 0.3s ease;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
 `;
 
 const Icons = styled.div`
