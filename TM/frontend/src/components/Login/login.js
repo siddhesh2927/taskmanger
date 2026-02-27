@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 import { useNavigate } from "react-router-dom"
 import Button from '@mui/material/Button';
 
-import "../Auth/auth.css"
+import "../../components/Auth/auth.css"
 import "./login.css"
 
 export const Login=()=>{
