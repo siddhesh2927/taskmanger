@@ -42,8 +42,8 @@ export const Register = () => {
     }
 
     return (
-        <div className="register-root">
-            <div className="register-paper">
+        <div className="register-root auth-container">
+            <div className="register-paper auth-card">
                 <div className="auth-header">
                     <h1>Create your account</h1>
                     <p>Join and manage your tasks</p>
