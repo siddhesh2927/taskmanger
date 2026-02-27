@@ -1,3 +1,4 @@
+import '../Auth/auth.css'
 import './register.css'
 import { register } from "../../redux/action"
 import { useDispatch } from "react-redux"
