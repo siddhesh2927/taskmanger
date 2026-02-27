@@ -26,7 +26,7 @@
 	align-items:center;
 	justify-content:center;
 	padding:1rem;
-	background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+	background: linear-gradient(145deg, var(--bg-start) 0%, var(--bg-end) 100%);
 	z-index: 1000;
 }
 
@@ -51,7 +51,7 @@
 @keyframes slideUp {
 	from {
 		opacity: 0;
-		transform: translateY(30px);
+		transform: translateY(60px);
 	}
 	to {
 		opacity: 1;
