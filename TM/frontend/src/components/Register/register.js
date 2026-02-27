@@ -1,3 +1,4 @@
+import '../Auth/auth.css'
 import './register.css'
 import { register } from "../../redux/action"
 import { useDispatch } from "react-redux"
@@ -46,7 +47,7 @@ export const Register = () => {
             <div className="register-paper auth-card">
                 <div className="auth-header">
                     <h1>Create your account</h1>
-                    <p>Join and manage your tasks</p>
+                    <p>Please Join and manage your tasks</p>
                 </div>
 
                 <form className="auth-form" onSubmit={handleSubmit}>

@@ -6,6 +6,7 @@ import Cookies from 'js-cookie'
 import { useNavigate } from "react-router-dom"
 import Button from '@mui/material/Button';
 
+import "../Auth/auth.css"
 import "./login.css"
 
 export const Login=()=>{
@@ -36,7 +37,7 @@ export const Login=()=>{
             <form className="auth-card">
                 <div className="auth-header">
                     <h1>Sign In</h1>
-                    <p>Welcome back! Please login to your account</p>
+                    <p>Welcome back! login to your account</p>
                 </div>
                 <div className="auth-form">
                     <div className="form-group">
