@@ -37,7 +37,7 @@ export const Login=()=>{
             <form className="auth-card">
                 <div className="auth-header">
                     <h1>Sign In</h1>
-                    <p>Welcome back! Please login to your account</p>
+                    <p>Welcome back! login to your account</p>
                 </div>
                 <div className="auth-form">
                     <div className="form-group">
