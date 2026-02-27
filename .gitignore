@@ -1,0 +1,8 @@
+# GitHub workflows
+.github/workflows/jekyll-gh-pages.yml
+.github/workflows/static.yml
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
