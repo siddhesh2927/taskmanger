@@ -3,12 +3,6 @@ import { register } from "../../redux/action"
 import { useDispatch } from "react-redux"
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
-import TextField from '@mui/material/TextField'
-import Button from '@mui/material/Button'
-import Box from '@mui/material/Box'
-import Paper from '@mui/material/Paper'
-import Typography from '@mui/material/Typography'
-import Stack from '@mui/material/Stack'
 import Cookies from 'js-cookie'
 
 export const Register = () => {
@@ -18,6 +12,7 @@ export const Register = () => {
         password: "",
         mobile: ""
     })
+    const [error, setError] = useState("")
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -26,12 +21,14 @@ export const Register = () => {
             ...data,
             [target.name]: target.value
         })
+        setError("")
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         if (data.email === "" || data.mobile === "" || data.name === "" || data.password === "") {
-            return alert("All fields required")
+            setError("All fields required")
+            return
         }
         try {
             await dispatch(register(data))
@@ -40,27 +37,76 @@ export const Register = () => {
             }
         } catch (err) {
             console.error(err)
-            alert("Registration failed")
+            setError("Registration failed. Please try again.")
         }
     }
 
     return (
-        <Box className="register-root">
-            <Paper className="register-paper" elevation={4}>
-                <Typography variant="h4" className="register-title">Create your account</Typography>
-                <Typography variant="body2" className="register-sub">Join and manage your tasks</Typography>
+        <div className="register-root">
+            <div className="register-paper">
+                <div className="auth-header">
+                    <h1>Create your account</h1>
+                    <p>Join and manage your tasks</p>
+                </div>
 
-                <Box component="form" onSubmit={handleSubmit} className="register-form">
-                    <Stack spacing={2}>
-                        <TextField onChange={(e) => update(e.target)} name="name" type="text" label="Your name" variant="outlined" fullWidth />
-                        <TextField onChange={(e) => update(e.target)} name="email" type="email" label="Email" variant="outlined" fullWidth />
-                        <TextField onChange={(e) => update(e.target)} name="mobile" type="tel" label="Mobile" variant="outlined" fullWidth />
-                        <TextField onChange={(e) => update(e.target)} name="password" type="password" label="Password" variant="outlined" fullWidth />
-                        <Button type="submit" variant="contained" size="large" className="register-button">Sign up</Button>
-                        <Typography variant="body2" align="center" className="register-foot">Already have an account? <Link to="/">Sign in</Link></Typography>
-                    </Stack>
-                </Box>
-            </Paper>
-        </Box>
+                <form className="auth-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">Full Name</label>
+                        <input
+                            id="name"
+                            onChange={(e) => update(e.target)}
+                            name="name"
+                            type="text"
+                            placeholder="Enter your name"
+                            value={data.name}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            id="email"
+                            onChange={(e) => update(e.target)}
+                            name="email"
+                            type="email"
+                            placeholder="Enter your email"
+                            value={data.email}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="mobile">Mobile Number</label>
+                        <input
+                            id="mobile"
+                            onChange={(e) => update(e.target)}
+                            name="mobile"
+                            type="tel"
+                            placeholder="Enter your mobile number"
+                            value={data.mobile}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input
+                            id="password"
+                            onChange={(e) => update(e.target)}
+                            name="password"
+                            type="password"
+                            placeholder="Enter a strong password"
+                            value={data.password}
+                        />
+                    </div>
+
+                    {error && <div className="error-message">{error}</div>}
+
+                    <button type="submit" className="auth-button">Sign up</button>
+                </form>
+
+                <div className="auth-footer">
+                    Already have an account? <Link to="/">Sign in</Link>
+                </div>
+            </div>
+        </div>
     )
 }
