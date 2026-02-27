@@ -1,0 +1,73 @@
+:root{
+	--primary: #1976d2;
+	--primary-contrast: #ffffff;
+	--bg-start: #f7fbff;
+	--bg-end: #ffffff;
+	--card-radius: 12px;
+	--card-padding: 28px;
+}
+
+/* Center the register card */
+.register-root{
+	display:flex;
+	min-height:70vh;
+	align-items:center;
+	justify-content:center;
+	padding:24px;
+	background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+}
+
+.register-paper{
+	width:100%;
+	max-width:420px;
+	padding:var(--card-padding);
+	border-radius:var(--card-radius);
+}
+
+.register-title{
+	font-weight:700;
+	text-align:center;
+	margin-bottom:4px;
+}
+
+.register-sub{
+	text-align:center;
+	color:rgba(0,0,0,0.6);
+	margin-bottom:18px;
+}
+
+.register-form{
+	margin-top:6px;
+}
+
+.register-button{
+	margin-top:8px;
+	background-color:var(--primary);
+	color:var(--primary-contrast);
+}
+
+.register-button:hover{
+	background-color: #145ea8;
+}
+
+.register-foot{
+	color:rgba(0,0,0,0.7);
+}
+
+.register-foot a{
+	color:var(--primary);
+	text-decoration:none;
+	font-weight:600;
+}
+
+/* Minor overrides for MUI Outlined inputs to keep theme cohesive */
+.register-paper .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline{
+	border-color: rgba(0,0,0,0.12);
+}
+.register-paper .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline{
+	border-color: rgba(0,0,0,0.2);
+}
+
+@media (max-width:480px){
+	.register-paper{padding:18px; margin:12px}
+}
