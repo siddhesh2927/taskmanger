@@ -28,7 +28,7 @@ css
   padding: 2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .app-container {
     flex-direction: column;
   }
