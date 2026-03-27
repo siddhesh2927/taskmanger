@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6-jammy
+    container_name: taskmanager-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
+  backend:
+    build: 
+      context: ./TM/backend
+      dockerfile: Dockerfile
+    container_name: taskmanager-backend
+    ports:
+      - "1200:1200"
+    environment:
+      - PORT=1200
+      - MONGO_URI=mongodb://mongodb:27017/taskmanager
+      - JWT_SECRET=this_is_a_docker_development_secret
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./TM/frontend
+      dockerfile: Dockerfile
+    container_name: taskmanager-frontend
+    ports:
+      - "3000:80" # Map host's port 3000 to Nginx's port 80
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
